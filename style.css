@@ -991,16 +991,16 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
 .ft-avatar {
     position: relative;
     flex-shrink: 0;
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 110px;
 }
 
 .ft-photo {
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 110px;
     border-radius: 20px;
     object-fit: cover;
-    object-position: center 15%;
+    object-position: center 25%;
     border: 3px solid var(--yellow);
     box-shadow: 0 8px 24px rgba(26,77,46,0.2);
     display: block;
@@ -1577,10 +1577,21 @@ select.c-input option {
     .vert-label { display: none; }
 }
 
+@media (max-width: 600px) {
+    .bc-actions {
+        flex-direction: column;
+    }
+    .bc-call,
+    .bc-map {
+        flex: unset;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 @media (max-width: 480px) {
     .hero-btns { flex-direction: column; }
     .btn-yellow, .btn-outline-dark { width: 100%; justify-content: center; }
-    .bc-actions { flex-direction: column; }
     .hero-strip span { flex: 1 1 100%; }
     .ft-contacts { flex-direction: column; }
     .ft-phone { text-align: center; }
