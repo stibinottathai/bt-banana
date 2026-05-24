@@ -1520,7 +1520,7 @@ select.c-input option {
     .fg-brand       { grid-column: 1 / 3; }
 
     /* Mobile nav */
-    .burger         { display: flex; }
+    .burger         { display: flex; margin-left: auto; }
     .nav-cta-btn    { display: none; }
 
     .nav-menu {
