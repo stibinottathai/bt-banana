@@ -1,98 +1,146 @@
 /* ==========================================================================
-   BT Banana - Interactivity & Animations
+   BT Banana — Interactions & Animations
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- Mobile Navigation ---
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const navLinksItems = document.querySelectorAll('.nav-link');
+
+    /* ── Mobile Navigation ───────────────────────────────────────────── */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    const navItems  = document.querySelectorAll('.nav-link, .nav-cta');
 
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('open');
+        navLinks.classList.toggle('open');
+        document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
     });
 
-    // Close menu when a link is clicked
-    navLinksItems.forEach(link => {
+    navItems.forEach(link => {
         link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
+            hamburger.classList.remove('open');
+            navLinks.classList.remove('open');
+            document.body.style.overflow = '';
         });
     });
 
-    // --- Sticky Navbar & Scroll Progress ---
-    const navbar = document.getElementById('navbar');
-    const progressBar = document.querySelector('.scroll-progress');
-
-    window.addEventListener('scroll', () => {
-        // Sticky Navbar styling
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+    // Close nav on outside click
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('open') &&
+            !navLinks.contains(e.target) &&
+            !hamburger.contains(e.target)) {
+            hamburger.classList.remove('open');
+            navLinks.classList.remove('open');
+            document.body.style.overflow = '';
         }
-
-        // Scroll Progress Bar
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        progressBar.style.width = scrolled + '%';
     });
 
-    // --- Scroll Reveal Animations ---
-    const revealElements = document.querySelectorAll('.reveal, .reveal-up, .reveal-left, .reveal-right');
+    /* ── Navbar Scroll + Progress Bar ──────────────────────────────── */
+    const navbar      = document.getElementById('navbar');
+    const progressBar = document.getElementById('scrollProgress');
 
-    const revealOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
+    const handleScroll = () => {
+        const scrollY  = window.scrollY;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const progress  = maxScroll > 0 ? (scrollY / maxScroll) * 100 : 0;
+
+        progressBar.style.width = `${progress}%`;
+        navbar.classList.toggle('scrolled', scrollY > 60);
     };
 
-    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            }
-            entry.target.classList.add('active');
-            observer.unobserve(entry.target); // Optional: stop observing once revealed
-        });
-    }, revealOptions);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // run once on load
 
-    revealElements.forEach(el => {
-        revealOnScroll.observe(el);
-    });
+    /* ── Scroll Reveal (Intersection Observer) ──────────────────────── */
+    const revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
 
-    // --- Counter Animation ---
-    const counters = document.querySelectorAll('.counter');
-    const speed = 100; // The lower the slower
-
-    const counterObserver = new IntersectionObserver((entries, observer) => {
+    const revealObs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const counter = entry.target;
-                
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-target');
-                    const count = +counter.innerText;
-                    
-                    const inc = target / speed;
-                    
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count + inc);
-                        setTimeout(updateCount, 20);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-                
-                updateCount();
-                observer.unobserve(counter);
+                entry.target.classList.add('active');
+                revealObs.unobserve(entry.target);
             }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => revealObs.observe(el));
+
+    /* ── Number Counter Animation ───────────────────────────────────── */
+    const counters = document.querySelectorAll('.counter');
+
+    const countObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            const el     = entry.target;
+            const target = +el.dataset.target;
+            const duration = 1800; // ms
+            const start    = performance.now();
+
+            const update = (now) => {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out cubic
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.round(eased * target);
+                if (progress < 1) requestAnimationFrame(update);
+                else el.textContent = target;
+            };
+
+            requestAnimationFrame(update);
+            countObs.unobserve(el);
         });
     }, { threshold: 0.5 });
 
-    counters.forEach(counter => {
-        counterObserver.observe(counter);
-    });
+    counters.forEach(el => countObs.observe(el));
+
+    /* ── Contact Form Submit ─────────────────────────────────────────── */
+    // exposed to global so inline onsubmit can call it
+    window.handleFormSubmit = function(event) {
+        event.preventDefault();
+
+        const btn      = document.getElementById('submitBtn');
+        const textEl   = btn.querySelector('.btn-text');
+        const successEl = btn.querySelector('.btn-success');
+
+        btn.disabled = true;
+        textEl.style.display = 'none';
+        successEl.style.display = 'flex';
+
+        // Simulate submission delay, then reset
+        setTimeout(() => {
+            btn.disabled = false;
+            textEl.style.display = 'flex';
+            successEl.style.display = 'none';
+            event.target.reset();
+        }, 3000);
+    };
+
+    /* ── Floating WhatsApp — hide on contact section ────────────────── */
+    const floatWa      = document.getElementById('floatWa');
+    const contactSec   = document.getElementById('contact');
+
+    if (floatWa && contactSec) {
+        const waObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                floatWa.style.opacity = entry.isIntersecting ? '0' : '1';
+                floatWa.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
+            });
+        }, { threshold: 0.3 });
+
+        waObs.observe(contactSec);
+    }
+
+    /* ── Smooth image parallax on hero ──────────────────────────────── */
+    const heroBgImg = document.querySelector('.hero-bg-img');
+    if (heroBgImg) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const heroH = document.querySelector('.hero').offsetHeight;
+            if (scrolled < heroH) {
+                const shift = scrolled * 0.3;
+                heroBgImg.style.transform = `translateY(${shift}px)`;
+            }
+        }, { passive: true });
+    }
+
 });
