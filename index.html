@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BT Banana | Premium Wholesale Bananas — Alakode & Nellipara</title>
-    <meta name="description" content="BT Banana — Kerala's trusted wholesale banana supplier with branches in Nellipara and Alakode. Fresh Grade-A bananas at competitive wholesale prices. Call Thomas or Albin today.">
+    <meta name="description" content="BT Banana — Kerala's trusted wholesale banana supplier with branches in Nellipara and Alakode. Fresh Grade-A bananas at competitive wholesale prices.">
     <meta name="keywords" content="BT Banana, wholesale banana Kerala, Nellipara banana, Alakode banana, wholesale fruits Kerala">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -22,335 +22,356 @@
     <!-- Scroll Progress -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
-    <!-- Navigation -->
+    <!-- Mobile Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ===== NAVBAR ===== -->
     <nav class="navbar" id="navbar">
         <div class="nav-inner">
             <a href="#" class="nav-logo">
-                <img src="images/logo.png" alt="BT Banana Logo" class="logo-img">
+                <img src="images/logo.png" alt="BT Banana" class="logo-img">
             </a>
 
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about" class="nav-link">About</a></li>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about"    class="nav-link">About</a></li>
                 <li><a href="#branches" class="nav-link">Branches</a></li>
-                <li><a href="#produce" class="nav-link">Produce</a></li>
-                <li><a href="#why-us" class="nav-link">Why Us</a></li>
+                <li><a href="#gallery"  class="nav-link">Gallery</a></li>
+                <li><a href="#why-us"   class="nav-link">Why Us</a></li>
                 <li><a href="#founders" class="nav-link">Founders</a></li>
                 <li>
-                    <a href="#contact" class="nav-cta">
-                        <i class="fa-solid fa-phone-volume"></i> Order Now
+                    <a href="https://wa.me/918086648081" target="_blank" class="nav-wa">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
                     </a>
                 </li>
             </ul>
 
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
+            <a href="#contact" class="nav-cta-btn">
+                Order Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <button class="burger" id="burger" aria-label="Menu">
+                <span></span><span></span>
             </button>
         </div>
     </nav>
 
-    <!-- =========== HERO =========== -->
+    <!-- ===== HERO ===== -->
     <section class="hero" id="hero">
-        <div class="hero-bg">
-            <img src="images/btbanana-nellipara.png" alt="BT Banana Nellipara Warehouse" class="hero-bg-img">
-            <div class="hero-overlay"></div>
-        </div>
-
-        <div class="hero-content">
-            <div class="hero-eyebrow reveal-up">
-                <span class="dot"></span> Kerala's Premier Banana Wholesale
-            </div>
-            <h1 class="hero-title reveal-up delay-1">
-                <span class="title-line">Fresh.</span>
-                <span class="title-line gold-text">Quality.</span>
-                <span class="title-line">Trust.</span>
-            </h1>
-            <p class="hero-desc reveal-up delay-2">
-                Two decades of delivering premium grade bananas to businesses across Kerala. Direct from farm to your doorstep — Alakode & Nellipara branches at your service.
-            </p>
-
-            <div class="hero-actions reveal-up delay-3">
-                <a href="tel:+919447483169" class="btn-hero-primary">
-                    <i class="fa-solid fa-phone"></i> Call Thomas
-                </a>
-                <a href="#branches" class="btn-hero-secondary">
-                    <i class="fa-solid fa-location-dot"></i> Our Locations
-                </a>
-            </div>
-
-            <div class="hero-stats reveal-up delay-4">
-                <div class="hstat">
-                    <span class="hstat-num counter" data-target="2">0</span>
-                    <span class="hstat-label">Branches</span>
-                </div>
-                <div class="hstat-divider"></div>
-                <div class="hstat">
-                    <span class="hstat-num counter" data-target="100">0</span><span class="hstat-plus">+</span>
-                    <span class="hstat-label">Clients</span>
-                </div>
-                <div class="hstat-divider"></div>
-                <div class="hstat">
-                    <span class="hstat-num">100</span><span class="hstat-plus">%</span>
-                    <span class="hstat-label">Fresh Daily</span>
-                </div>
+        <!-- Marquee ticker -->
+        <div class="ticker-wrap">
+            <div class="ticker">
+                <span>FRESH BANANAS</span><span class="tick-dot">●</span>
+                <span>WHOLESALE SUPPLY</span><span class="tick-dot">●</span>
+                <span>NELLIPARA &amp; ALAKODE</span><span class="tick-dot">●</span>
+                <span>GRADE A QUALITY</span><span class="tick-dot">●</span>
+                <span>KERALA'S BEST</span><span class="tick-dot">●</span>
+                <span>FRESH BANANAS</span><span class="tick-dot">●</span>
+                <span>WHOLESALE SUPPLY</span><span class="tick-dot">●</span>
+                <span>NELLIPARA &amp; ALAKODE</span><span class="tick-dot">●</span>
+                <span>GRADE A QUALITY</span><span class="tick-dot">●</span>
+                <span>KERALA'S BEST</span><span class="tick-dot">●</span>
             </div>
         </div>
 
-        <a href="#about" class="scroll-hint">
-            <i class="fa-solid fa-chevron-down"></i>
-        </a>
-    </section>
-
-    <!-- =========== ABOUT =========== -->
-    <section class="about section" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-images reveal-left">
-                    <div class="img-stack">
-                        <img src="images/produce-1.png" alt="Banana Farm" class="img-a">
-                        <img src="images/produce 3.png" alt="Fresh Bananas" class="img-b">
-                        <div class="img-badge">
-                            <i class="fa-solid fa-seedling"></i>
-                            <span>Farm Fresh</span>
-                        </div>
-                    </div>
+        <div class="hero-grid">
+            <div class="hero-left">
+                <div class="hero-tag slant-in">
+                    <i class="fa-solid fa-seedling"></i> Est. Kerala, India
                 </div>
-
-                <div class="about-text reveal-right">
-                    <p class="section-eyebrow">About BT Banana</p>
-                    <h2 class="section-title">Rooted in <em>Quality</em> &amp; Trust</h2>
-                    <p class="body-text">
-                        BT Banana is Kerala's most trusted wholesale banana supplier — a name built on generations of honest trade, premium quality, and personal relationships with our clients.
-                    </p>
-                    <p class="body-text">
-                        From our twin branches in Nellipara and Alakode, we supply the freshest Grade-A bananas to retailers, hotels, supermarkets, and businesses throughout the region.
-                    </p>
-
-                    <ul class="check-list">
-                        <li>
-                            <span class="check-icon"><i class="fa-solid fa-check"></i></span>
-                            Hand-picked, Grade-A selection process
-                        </li>
-                        <li>
-                            <span class="check-icon"><i class="fa-solid fa-check"></i></span>
-                            Consistent daily supply guarantee
-                        </li>
-                        <li>
-                            <span class="check-icon"><i class="fa-solid fa-check"></i></span>
-                            Competitive wholesale market pricing
-                        </li>
-                        <li>
-                            <span class="check-icon"><i class="fa-solid fa-check"></i></span>
-                            Direct from trusted Kerala farms
-                        </li>
-                    </ul>
-
-                    <a href="#contact" class="btn-primary-main">
-                        Get Wholesale Price <i class="fa-solid fa-arrow-right"></i>
+                <h1 class="hero-heading slant-in d1">
+                    <span class="h-line">We Grow.</span>
+                    <span class="h-line accent-line">We Supply.</span>
+                    <span class="h-line">You Profit.</span>
+                </h1>
+                <p class="hero-sub slant-in d2">
+                    BT Banana is Alakode's most trusted wholesale banana supplier — two branches, daily fresh stock, and 100+ loyal clients.
+                </p>
+                <div class="hero-btns slant-in d3">
+                    <a href="tel:+919447483169" class="btn-yellow">
+                        <i class="fa-solid fa-phone"></i> Call Thomas
+                    </a>
+                    <a href="#branches" class="btn-outline-dark">
+                        Explore Branches <i class="fa-solid fa-chevron-right"></i>
                     </a>
                 </div>
+
+                <div class="hero-stats slant-in d4">
+                    <div class="stat-box">
+                        <span class="stat-n counter" data-target="2">0</span>
+                        <span class="stat-lbl">Branches</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-box">
+                        <span class="stat-n"><span class="counter" data-target="100">0</span>+</span>
+                        <span class="stat-lbl">Clients</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-box">
+                        <span class="stat-n">Daily</span>
+                        <span class="stat-lbl">Fresh Stock</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right slant-in d2">
+                <div class="hero-photo-frame">
+                    <img src="images/btbanana-nellipara.png" alt="BT Banana Nellipara" class="hero-photo">
+                    <div class="frame-tag">
+                        <i class="fa-solid fa-store"></i> Nellipara Branch
+                    </div>
+                    <div class="frame-bg-shape"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom strip -->
+        <div class="hero-strip">
+            <span><i class="fa-solid fa-award"></i> Grade A Certified</span>
+            <span><i class="fa-solid fa-truck-fast"></i> Same-Day Loading</span>
+            <span><i class="fa-solid fa-handshake"></i> Trusted Partners</span>
+            <span><i class="fa-solid fa-leaf"></i> Farm Direct</span>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+
+                <div class="about-visual appear-left">
+                    <div class="about-img-main">
+                        <img src="images/produce-1.png" alt="Banana Farm">
+                    </div>
+                    <div class="about-img-float">
+                        <img src="images/produce 3.png" alt="Banana Bunches">
+                        <div class="float-label">Grade A</div>
+                    </div>
+                    <!-- Big decorative text -->
+                    <div class="deco-text">BT</div>
+                </div>
+
+                <div class="about-copy appear-right">
+                    <div class="section-tag">— Who We Are</div>
+                    <h2 class="section-heading">
+                        Rooted in Kerala.<br>Built on <mark>Trust.</mark>
+                    </h2>
+                    <p class="body-copy">
+                        BT Banana has been at the heart of Alakode's banana wholesale trade for years. From lush banana plantations to your business shelf — we control every step.
+                    </p>
+                    <p class="body-copy">
+                        With flagship branches in Nellipara and Alakode, we supply hundreds of retailers, hotels, supermarkets and businesses with consistent Grade-A fresh bananas every single day.
+                    </p>
+
+                    <ul class="feat-list">
+                        <li><span class="feat-dot"></span> Hand-picked Grade-A selection</li>
+                        <li><span class="feat-dot"></span> Consistent daily supply — no gaps</li>
+                        <li><span class="feat-dot"></span> Competitive wholesale pricing</li>
+                        <li><span class="feat-dot"></span> Direct from Kerala farms</li>
+                    </ul>
+
+                    <a href="#contact" class="btn-yellow">
+                        Get Wholesale Pricing <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- =========== BRANCHES =========== -->
-    <section class="branches section" id="branches">
+    <!-- ===== BRANCHES ===== -->
+    <section class="branches" id="branches">
+        <!-- Section label vertical -->
+        <div class="vert-label">OUR BRANCHES</div>
+
         <div class="container">
-            <div class="section-header reveal-up">
-                <p class="section-eyebrow">Our Locations</p>
-                <h2 class="section-title">Two Branches, <em>One Standard</em></h2>
-                <p class="section-sub">Strategically located to serve you better across Kerala.</p>
+            <div class="branches-header appear-up">
+                <div class="section-tag">— Two Locations</div>
+                <h2 class="section-heading">Where to <mark>Find Us</mark></h2>
             </div>
 
             <div class="branches-grid">
                 <!-- Nellipara -->
-                <div class="branch-card reveal-up">
-                    <div class="branch-photo-wrap">
-                        <img src="images/btbanana-nellipara.png" alt="BT Banana Nellipara Branch" class="branch-photo">
-                        <div class="branch-photo-overlay">
-                            <span class="open-badge"><i class="fa-solid fa-store"></i> Open Daily</span>
+                <article class="branch-card appear-up">
+                    <div class="bc-number">01</div>
+                    <div class="bc-img-wrap">
+                        <img src="images/btbanana-nellipara.png" alt="Nellipara Branch" class="bc-img">
+                        <div class="bc-status">
+                            <span class="status-dot"></span> Open Daily
                         </div>
                     </div>
-                    <div class="branch-body">
-                        <div class="branch-number">01</div>
-                        <h3 class="branch-name">Nellipara Branch</h3>
-                        <p class="branch-location"><i class="fa-solid fa-location-dot"></i> Nellipara, Kerala 670571</p>
-                        <p class="branch-desc">Our flagship wholesale distribution center — massive indoor warehouse with thousands of bunches ready for bulk supply every day.</p>
-                        <div class="branch-contact">
-                            <a href="tel:+919447483169" class="btn-branch-call">
+                    <div class="bc-body">
+                        <h3 class="bc-title">Nellipara</h3>
+                        <p class="bc-loc"><i class="fa-solid fa-location-dot"></i> Nellipara, Kerala 670571</p>
+                        <p class="bc-desc">Massive indoor warehouse — thousands of banana bunches ready for bulk loading every morning.</p>
+                        <div class="bc-actions">
+                            <a href="tel:+919447483169" class="bc-call">
                                 <i class="fa-solid fa-phone"></i> +91 94474 83169
                             </a>
-                            <a href="https://www.google.com/maps/search/?api=1&query=BT+Banana,+5CXV%2BHWG,+Nellippara,+Kerala+670571,+India" target="_blank" class="btn-branch-map">
-                                <i class="fa-solid fa-map-location-dot"></i> Directions
+                            <a href="https://www.google.com/maps/search/?api=1&query=BT+Banana,+5CXV%2BHWG,+Nellippara,+Kerala+670571,+India" target="_blank" class="bc-map">
+                                <i class="fa-solid fa-map-location-dot"></i> Map
                             </a>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Alakode -->
-                <div class="branch-card reveal-up delay-2">
-                    <div class="branch-photo-wrap">
-                        <img src="images/bt-banana-alkode.png" alt="BT Banana Alakode Branch" class="branch-photo">
-                        <div class="branch-photo-overlay">
-                            <span class="open-badge"><i class="fa-solid fa-store"></i> Open Daily</span>
+                <article class="branch-card appear-up d2">
+                    <div class="bc-number">02</div>
+                    <div class="bc-img-wrap">
+                        <img src="images/bt-banana-alkode.png" alt="Alakode Branch" class="bc-img">
+                        <div class="bc-status">
+                            <span class="status-dot"></span> Open Daily
                         </div>
                     </div>
-                    <div class="branch-body">
-                        <div class="branch-number">02</div>
-                        <h3 class="branch-name">Alakode Branch</h3>
-                        <p class="branch-location"><i class="fa-solid fa-location-dot"></i> Alakode, Kerala 670571</p>
-                        <p class="branch-desc">Outdoor wholesale shop with large stock capacity — serving the Alakode region with fresh bananas and same-day bulk loading available.</p>
-                        <div class="branch-contact">
-                            <a href="tel:+918086648081" class="btn-branch-call">
+                    <div class="bc-body">
+                        <h3 class="bc-title">Alakode</h3>
+                        <p class="bc-loc"><i class="fa-solid fa-location-dot"></i> Alakode, Kerala 670571</p>
+                        <p class="bc-desc">Outdoor wholesale hub with large daily volumes and same-day loading for bulk buyers.</p>
+                        <div class="bc-actions">
+                            <a href="tel:+918086648081" class="bc-call">
                                 <i class="fa-solid fa-phone"></i> +91 80866 48081
                             </a>
-                            <a href="https://www.google.com/maps/search/?api=1&query=BT+Banana,+Alakode,+Kerala+670571,+India" target="_blank" class="btn-branch-map">
-                                <i class="fa-solid fa-map-location-dot"></i> Directions
+                            <a href="https://www.google.com/maps/search/?api=1&query=BT+Banana,+Alakode,+Kerala+670571,+India" target="_blank" class="bc-map">
+                                <i class="fa-solid fa-map-location-dot"></i> Map
                             </a>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- =========== PRODUCE =========== -->
-    <section class="produce section" id="produce">
+    <!-- ===== GALLERY ===== -->
+    <section class="gallery-sec" id="gallery">
         <div class="container">
-            <div class="section-header center reveal-up">
-                <p class="section-eyebrow">Our Produce</p>
-                <h2 class="section-title">Premium <em>Banana Supply</em></h2>
-                <p class="section-sub">Every bunch we supply meets our strict Grade-A quality standards — fresh, firm, and ready for sale.</p>
+            <div class="gallery-header appear-up">
+                <div class="section-tag">— Our Produce</div>
+                <h2 class="section-heading">Straight From <mark>the Farm</mark></h2>
+                <p class="section-sub">Every bunch is handpicked, inspected, and delivered at peak freshness.</p>
             </div>
 
-            <div class="produce-gallery">
-                <div class="produce-item large reveal-up">
-                    <img src="images/btbanana-nellipara.png" alt="Nellipara Warehouse Stock">
-                    <div class="produce-label">
-                        <h4>Warehouse Stock</h4>
-                        <p>Bulk wholesale bundles</p>
+            <div class="gallery-masonry">
+                <div class="gm-item tall appear-up">
+                    <img src="images/btbanana-nellipara.png" alt="Nellipara Warehouse">
+                    <div class="gm-overlay">
+                        <span>Warehouse Stock</span>
                     </div>
                 </div>
-                <div class="produce-item reveal-up delay-1">
-                    <img src="images/produce-1.png" alt="Fresh Farm Bananas">
-                    <div class="produce-label">
-                        <h4>Direct From Farm</h4>
-                        <p>Farm-fresh harvest</p>
+                <div class="gm-item appear-up d1">
+                    <img src="images/produce-1.png" alt="Farm Bananas">
+                    <div class="gm-overlay">
+                        <span>Farm Fresh</span>
                     </div>
                 </div>
-                <div class="produce-item reveal-up delay-2">
-                    <img src="images/produce 3.png" alt="Fresh Banana Bunches">
-                    <div class="produce-label">
-                        <h4>Grade-A Quality</h4>
-                        <p>Hand-selected bunches</p>
+                <div class="gm-item appear-up d2">
+                    <img src="images/produce 3.png" alt="Banana Bunches">
+                    <div class="gm-overlay">
+                        <span>Grade-A Bunches</span>
                     </div>
                 </div>
-                <div class="produce-item reveal-up delay-3">
-                    <img src="images/bt-banana-alkode.png" alt="Alakode Wholesale Supply">
-                    <div class="produce-label">
-                        <h4>Alakode Supply</h4>
-                        <p>Large daily volumes</p>
+                <div class="gm-item wide appear-up d1">
+                    <img src="images/bt-banana-alkode.png" alt="Alakode Branch">
+                    <div class="gm-overlay">
+                        <span>Alakode Supply Hub</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- =========== WHY US =========== -->
-    <section class="why-us section" id="why-us">
-        <div class="why-us-inner">
-            <div class="container">
-                <div class="section-header center reveal-up">
-                    <p class="section-eyebrow">Why Choose Us</p>
-                    <h2 class="section-title">The BT Banana <em>Difference</em></h2>
-                </div>
-
-                <div class="features-grid">
-                    <div class="feature-card reveal-up">
-                        <div class="feat-icon"><i class="fa-solid fa-medal"></i></div>
-                        <h3>Grade-A Quality</h3>
-                        <p>Every banana batch is hand-inspected and sourced from the finest Kerala farms. Quality is non-negotiable at BT Banana.</p>
-                    </div>
-                    <div class="feature-card reveal-up delay-1">
-                        <div class="feat-icon"><i class="fa-solid fa-tags"></i></div>
-                        <h3>Best Wholesale Rates</h3>
-                        <p>Highly competitive market pricing that ensures your business remains profitable. Bulk order discounts available.</p>
-                    </div>
-                    <div class="feature-card reveal-up delay-2">
-                        <div class="feat-icon"><i class="fa-solid fa-truck-fast"></i></div>
-                        <h3>Same-Day Loading</h3>
-                        <p>Place your order and we'll have it loaded and ready for pickup or delivery the same day. No waiting, no delays.</p>
-                    </div>
-                    <div class="feature-card reveal-up delay-3">
-                        <div class="feat-icon"><i class="fa-solid fa-handshake"></i></div>
-                        <h3>Trusted Partners</h3>
-                        <p>Years of reliable supply have earned us loyalty from over 100 businesses. We build relationships, not just transactions.</p>
-                    </div>
-                    <div class="feature-card reveal-up delay-1">
-                        <div class="feat-icon"><i class="fa-solid fa-calendar-check"></i></div>
-                        <h3>Consistent Supply</h3>
-                        <p>Rain or shine, our warehouses are stocked every day. Your business never has to worry about banana supply gaps.</p>
-                    </div>
-                    <div class="feature-card reveal-up delay-2">
-                        <div class="feat-icon"><i class="fa-solid fa-leaf"></i></div>
-                        <h3>Farm-Direct Fresh</h3>
-                        <p>Direct sourcing from Kerala's best banana cultivators means superior freshness and shelf life for your customers.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========== FOUNDERS =========== -->
-    <section class="founders section" id="founders">
+    <!-- ===== WHY US ===== -->
+    <section class="why-us" id="why-us">
+        <div class="why-bg-shape"></div>
         <div class="container">
-            <div class="section-header center reveal-up">
-                <p class="section-eyebrow">The People Behind BT Banana</p>
-                <h2 class="section-title">Meet the <em>Founders</em></h2>
-                <p class="section-sub">Built from the ground up by two people who believe in quality and honest trade.</p>
+            <div class="why-header appear-up">
+                <div class="section-tag light">— Why BT Banana</div>
+                <h2 class="section-heading light">The Difference You'll <mark>Feel Every Day</mark></h2>
             </div>
 
-            <div class="founders-grid">
+            <div class="why-grid">
+                <div class="why-card appear-up">
+                    <div class="wc-icon"><i class="fa-solid fa-medal"></i></div>
+                    <h3>Grade-A Only</h3>
+                    <p>Every batch is hand-inspected before leaving our warehouses. We never compromise on quality.</p>
+                </div>
+                <div class="why-card appear-up d1">
+                    <div class="wc-icon"><i class="fa-solid fa-tags"></i></div>
+                    <h3>Best Market Rates</h3>
+                    <p>Highly competitive wholesale pricing keeps your business profitable. Volume discounts available.</p>
+                </div>
+                <div class="why-card appear-up d2">
+                    <div class="wc-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <h3>Same-Day Loading</h3>
+                    <p>Order placed, order loaded — the same day. Our logistics keep your shelves fully stocked.</p>
+                </div>
+                <div class="why-card appear-up">
+                    <div class="wc-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3>Long-Term Trust</h3>
+                    <p>Over 100 businesses rely on us. We build relationships that last decades, not just transactions.</p>
+                </div>
+                <div class="why-card appear-up d1">
+                    <div class="wc-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                    <h3>Daily Consistency</h3>
+                    <p>Rain or shine, our warehouses are stocked. Your business never faces a supply interruption.</p>
+                </div>
+                <div class="why-card appear-up d2">
+                    <div class="wc-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3>Farm-Direct Fresh</h3>
+                    <p>Direct sourcing from Kerala's finest plantations — shorter supply chain, longer shelf life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOUNDERS ===== -->
+    <section class="founders" id="founders">
+        <div class="container">
+            <div class="founders-head appear-up">
+                <div class="section-tag">— The Team</div>
+                <h2 class="section-heading">Meet the <mark>Founders</mark></h2>
+            </div>
+
+            <div class="founders-row">
                 <!-- Thomas -->
-                <div class="founder-card reveal-up">
-                    <div class="founder-avatar">
-                        <div class="avatar-inner">
-                            <i class="fa-solid fa-user-tie"></i>
-                        </div>
-                        <div class="avatar-ring"></div>
+                <div class="founder-tile appear-left">
+                    <div class="ft-avatar">
+                        <img src="images/Thomas.jpg" alt="Thomas MJ" class="ft-photo">
+                        <div class="ft-number">01</div>
                     </div>
-                    <div class="founder-info">
-                        <h3>Thomas MJ</h3>
-                        <p class="founder-role">Founder & Proprietor</p>
-                        <p class="founder-bio">The driving force behind BT Banana, Thomas brings decades of expertise in banana cultivation and wholesale distribution across Kerala.</p>
-                        <div class="founder-contacts">
-                            <a href="tel:+919447483169" class="btn-founder-call">
+                    <div class="ft-body">
+                        <p class="ft-role">Founder &amp; Proprietor</p>
+                        <h3 class="ft-name">Thomas MJ</h3>
+                        <p class="ft-bio">The visionary behind BT Banana — decades of expertise in banana cultivation and wholesale distribution across Alakode's markets.</p>
+                        <div class="ft-contacts">
+                            <a href="tel:+919447483169" class="ft-phone">
                                 <i class="fa-solid fa-phone"></i> +91 94474 83169
                             </a>
-                            <a href="https://wa.me/919447483169" target="_blank" class="btn-whatsapp">
-                                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                            <a href="https://wa.me/919447483169" target="_blank" class="ft-wa">
+                                <i class="fa-brands fa-whatsapp"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Divider bar -->
+                <div class="founders-divider appear-up"></div>
+
                 <!-- Albin -->
-                <div class="founder-card reveal-up delay-2">
-                    <div class="founder-avatar">
-                        <div class="avatar-inner">
-                            <i class="fa-solid fa-user-tie"></i>
-                        </div>
-                        <div class="avatar-ring"></div>
+                <div class="founder-tile appear-right">
+                    <div class="ft-avatar">
+                        <img src="images/albin.jpg" alt="Albin Augustine" class="ft-photo">
+                        <div class="ft-number">02</div>
                     </div>
-                    <div class="founder-info">
-                        <h3>Albin Augustine</h3>
-                        <p class="founder-role">Co-Founder & Partner</p>
-                        <p class="founder-bio">Albin oversees operations and client relations, ensuring every wholesale partner receives nothing but the best from BT Banana.</p>
-                        <div class="founder-contacts">
-                            <a href="tel:+918086648081" class="btn-founder-call">
+                    <div class="ft-body">
+                        <p class="ft-role">Co-Founder &amp; Partner</p>
+                        <h3 class="ft-name">Albin Augustine</h3>
+                        <p class="ft-bio">Operations and client relations expert, ensuring every wholesale partner receives the very best from BT Banana.</p>
+                        <div class="ft-contacts">
+                            <a href="tel:+918086648081" class="ft-phone">
                                 <i class="fa-solid fa-phone"></i> +91 80866 48081
                             </a>
-                            <a href="https://wa.me/918086648081" target="_blank" class="btn-whatsapp">
-                                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                            <a href="https://wa.me/918086648081" target="_blank" class="ft-wa">
+                                <i class="fa-brands fa-whatsapp"></i>
                             </a>
                         </div>
                     </div>
@@ -359,132 +380,146 @@
         </div>
     </section>
 
-    <!-- =========== CONTACT =========== -->
-    <section class="contact section" id="contact">
+    <!-- ===== CONTACT ===== -->
+    <section class="contact" id="contact">
         <div class="container">
-            <div class="contact-wrap reveal-up">
-                <div class="contact-left">
-                    <p class="section-eyebrow">Contact Us</p>
-                    <h2 class="section-title">Ready to <em>Order?</em></h2>
-                    <p class="body-text">Call us directly or send a WhatsApp message. We respond fast and deliver even faster.</p>
+            <div class="contact-inner">
 
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="cm-icon"><i class="fa-solid fa-phone-volume"></i></div>
-                            <div class="cm-detail">
-                                <h4>Call Direct</h4>
-                                <p>Thomas: <a href="tel:+919447483169">+91 94474 83169</a></p>
-                                <p>Albin: <a href="tel:+918086648081">+91 80866 48081</a></p>
+                <div class="contact-left appear-left">
+                    <div class="section-tag">— Get In Touch</div>
+                    <h2 class="section-heading">Ready to <mark>Order?</mark></h2>
+                    <p class="body-copy">Call us directly, WhatsApp your order, or fill the form — we respond fast and move faster.</p>
+
+                    <div class="c-info-cards">
+                        <a href="tel:+919447483169" class="c-card">
+                            <div class="c-card-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <p class="c-card-label">Thomas MJ</p>
+                                <p class="c-card-val">+91 94474 83169</p>
                             </div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="cm-icon green"><i class="fa-brands fa-whatsapp"></i></div>
-                            <div class="cm-detail">
-                                <h4>WhatsApp Orders</h4>
-                                <p>Fastest way to place bulk orders</p>
-                                <a href="https://wa.me/918086648081" target="_blank" class="wa-link">
-                                    Message Now <i class="fa-solid fa-arrow-right"></i>
-                                </a>
+                        </a>
+                        <a href="tel:+918086648081" class="c-card">
+                            <div class="c-card-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <p class="c-card-label">Albin Augustine</p>
+                                <p class="c-card-val">+91 80866 48081</p>
                             </div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="cm-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-                            <div class="cm-detail">
-                                <h4>Visit a Branch</h4>
-                                <p>Nellipara, Kerala 670571</p>
-                                <p>Alakode, Kerala 670571</p>
+                        </a>
+                        <a href="https://wa.me/918086648081" target="_blank" class="c-card wa">
+                            <div class="c-card-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div>
+                                <p class="c-card-label">WhatsApp Orders</p>
+                                <p class="c-card-val">Fastest response</p>
+                            </div>
+                        </a>
+                        <div class="c-card loc">
+                            <div class="c-card-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                            <div>
+                                <p class="c-card-label">Branches</p>
+                                <p class="c-card-val">Nellipara &amp; Alakode, Kerala</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="contact-right">
-                    <form id="inquiryForm" class="contact-form" onsubmit="handleFormSubmit(event)">
-                        <h3>Send an Inquiry</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="fname">Your Name</label>
-                                <input type="text" id="fname" class="form-field" placeholder="e.g. Rajesh Kumar" required>
+                <div class="contact-right appear-right">
+                    <form id="inquiryForm" class="c-form" onsubmit="handleFormSubmit(event)">
+                        <div class="c-form-header">
+                            <h3>Send an Inquiry</h3>
+                            <p>We'll get back to you within the hour.</p>
+                        </div>
+
+                        <div class="c-row">
+                            <div class="c-group">
+                                <label for="cname">Your Name</label>
+                                <input type="text" id="cname" class="c-input" placeholder="e.g. Rajesh Kumar" required>
                             </div>
-                            <div class="form-group">
-                                <label for="fphone">Phone Number</label>
-                                <input type="tel" id="fphone" class="form-field" placeholder="+91 00000 00000" required>
+                            <div class="c-group">
+                                <label for="cphone">Phone</label>
+                                <input type="tel" id="cphone" class="c-input" placeholder="+91 00000 00000" required>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="fbranch">Preferred Branch</label>
-                            <select id="fbranch" class="form-field">
+                        <div class="c-group">
+                            <label for="cbranch">Preferred Branch</label>
+                            <select id="cbranch" class="c-input">
                                 <option value="">Select a branch...</option>
                                 <option value="nellipara">Nellipara Branch</option>
                                 <option value="alakode">Alakode Branch</option>
                                 <option value="any">Any / Nearest</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="fmessage">Your Inquiry</label>
-                            <textarea id="fmessage" class="form-field" rows="4" placeholder="I'd like to order... (quantity, type, delivery requirements)" required></textarea>
+                        <div class="c-group">
+                            <label for="cmsg">Your Inquiry</label>
+                            <textarea id="cmsg" class="c-input" rows="4" placeholder="I'd like to order... (quantity, type, delivery details)" required></textarea>
                         </div>
-                        <button type="submit" class="btn-submit" id="submitBtn">
-                            <span class="btn-text"><i class="fa-solid fa-paper-plane"></i> Send Inquiry</span>
-                            <span class="btn-success" style="display:none;"><i class="fa-solid fa-circle-check"></i> Message Sent!</span>
+
+                        <button type="submit" class="c-submit" id="submitBtn">
+                            <span class="btn-txt"><i class="fa-solid fa-paper-plane"></i> Send Message</span>
+                            <span class="btn-ok" style="display:none"><i class="fa-solid fa-circle-check"></i> Message Sent!</span>
                         </button>
                     </form>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- =========== FOOTER =========== -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <img src="images/logo.png" alt="BT Banana Logo" class="footer-logo">
-                    <p class="footer-tagline">Fresh · Quality · Trust</p>
-                    <p class="footer-desc">Kerala's premier wholesale banana supplier. Two branches, one mission — delivering the freshest bananas to your business every day.</p>
-                    <div class="footer-socials">
-                        <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://wa.me/918086648081" class="social-btn wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <div class="footer-top-band">
+            <div class="container">
+                <p>Fresh · Quality · Trust — BT Banana, Kerala</p>
+                <div class="ftb-actions">
+                    <a href="tel:+919447483169"><i class="fa-solid fa-phone"></i> +91 94474 83169</a>
+                    <a href="https://wa.me/918086648081" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-body">
+            <div class="container footer-grid">
+                <div class="fg-brand">
+                    <img src="images/logo.png" alt="BT Banana" class="footer-logo">
+                    <p class="fg-desc">Kerala's premier wholesale banana supplier. Two branches, one mission — delivering the freshest bananas to your business every single day.</p>
+                    <div class="fg-socials">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/918086648081" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
 
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
+                <div class="fg-col">
+                    <h4>Navigate</h4>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#branches">Our Branches</a></li>
-                        <li><a href="#produce">Our Produce</a></li>
-                        <li><a href="#why-us">Why BT Banana</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#branches">Branches</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#why-us">Why Us</a></li>
                         <li><a href="#founders">Founders</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-col">
-                    <h4>Our Branches</h4>
-                    <div class="footer-branch">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div>
-                            <strong>Nellipara Branch</strong>
-                            <p>Nellipara, Kerala 670571</p>
-                            <a href="tel:+919447483169">+91 94474 83169</a>
-                        </div>
+                <div class="fg-col">
+                    <h4>Branches</h4>
+                    <div class="fg-branch">
+                        <strong>Nellipara</strong>
+                        <p>Nellipara, Kerala 670571</p>
+                        <a href="tel:+919447483169">+91 94474 83169</a>
                     </div>
-                    <div class="footer-branch">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div>
-                            <strong>Alakode Branch</strong>
-                            <p>Alakode, Kerala 670571</p>
-                            <a href="tel:+918086648081">+91 80866 48081</a>
-                        </div>
+                    <div class="fg-branch">
+                        <strong>Alakode</strong>
+                        <p>Alakode, Kerala 670571</p>
+                        <a href="tel:+918086648081">+91 80866 48081</a>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="footer-bottom">
+        <div class="footer-bottom">
+            <div class="container">
                 <p>&copy; 2026 BT Banana Wholesale. All rights reserved.</p>
-                <p class="made-with">Made with <i class="fa-solid fa-heart"></i> in Kerala</p>
+                <p>Made with <i class="fa-solid fa-heart"></i> in Kerala</p>
             </div>
         </div>
     </footer>
